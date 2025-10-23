@@ -2,12 +2,14 @@ import React from 'react';
 import rockImage from "../assets/images/rock.png";
 import paperImage from "../assets/images/paper.png";
 import scissorsImage from "../assets/images/scissors.png";
+import pendingImage from "../assets/images/pending.png";
 
 const Box = ({ title, item, result }) => {
   const imageMap = {
     rock: rockImage,
     paper: paperImage,
     scissors: scissorsImage,
+    pending: pendingImage,
   };
 
   let borderColor = "";
@@ -26,7 +28,7 @@ const Box = ({ title, item, result }) => {
   return (
     <div className={`box ${borderColor}`}>
           <h1>{title}</h1>
-          {item && <img src={item.img} alt={item.name}/>}
+          {item && <img src={imageMap[item.name.toLowerCase()]} alt={item.name}/>}
           {!item && <p>선택해주세요</p>}
           <h2>{item ? item.name : "선택 없음"}</h2>
     </div>

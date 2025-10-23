@@ -34,7 +34,7 @@
 }
 
 .box {
-  border: 5px solid black; 
+  border: 5px solid white; 
   padding: 20px;
   text-align: center;
   width: 250px;
@@ -59,7 +59,7 @@
 }
 
 .box.black {
-  border-color: black;
+  border-color: white;
 }
 
 .buttons {
@@ -67,6 +67,7 @@
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .buttons button {
@@ -76,5 +77,24 @@
 }
 
 body {
-  background-color: #333; /* 어두운 회색 배경색 */
+  background-color: #333;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 80vw;
+    max-width: 300px;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .buttons button {
+    font-size: 1em;
+  }
 }
